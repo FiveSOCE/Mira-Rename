@@ -24,15 +24,16 @@ jobs:
         run: gradle clean build --stacktrace
       - uses: actions/upload-artifact@v4
         with:
-          name: MiraRename-0.1.0
-          path: build/libs/MiraRename-0.1.0.jar
+          name: MiraRename-0.1.1
+          path: build/libs/MiraRename-0.1.1.jar
           if-no-files-found: error
       - name: Publish release
+        if: success() && github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v0.1.0 >/dev/null 2>&1; then
-            gh release upload v0.1.0 build/libs/MiraRename-0.1.0.jar --clobber
+          if gh release view v0.1.1 >/dev/null 2>&1; then
+            gh release upload v0.1.1 build/libs/MiraRename-0.1.1.jar --clobber
           else
-            gh release create v0.1.0 build/libs/MiraRename-0.1.0.jar --target "${{ github.sha }}" --title "MiraRename v0.1.0" --notes "Adds two-stage item name tags: right-click to enter a name in chat, then click the prepared tag onto an item to rename it. MiraItems identities are preserved when possible."
+            gh release create v0.1.1 build/libs/MiraRename-0.1.1.jar --target "${{ github.sha }}" --title "MiraRename v0.1.1" --notes "Fixes rename-tag right-click-in-air handling and adds legacy ampersand color/format code support for entered item names."
           fi
