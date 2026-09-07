@@ -65,12 +65,12 @@ public final class MiraRenamePlugin extends JavaPlugin implements Listener, Comm
         return item;
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = false)
     public void onUse(PlayerInteractEvent event) {
-        if (event.getHand() != EquipmentSlot.HAND) return;
         if (event.getAction() != Action.RIGHT_CLICK_AIR && event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
+        if (event.getHand() == null) return;
         Player player = event.getPlayer();
-        ItemStack item = player.getInventory().getItemInMainHand();
+        ItemStack item = event.getItem();
         if (!isTag(item)) return;
 
         event.setCancelled(true);
@@ -112,14 +112,15 @@ public final class MiraRenamePlugin extends JavaPlugin implements Listener, Comm
                 return;
             }
 
+            String legacyName = normalizeLegacy(raw);
             ItemMeta meta = tag.getItemMeta();
-            meta.displayName(c(raw));
-            meta.getPersistentDataContainer().set(nameKey, PersistentDataType.STRING, raw);
+            meta.displayName(c(legacyName));
+            meta.getPersistentDataContainer().set(nameKey, PersistentDataType.STRING, legacyName);
             tag.setItemMeta(meta);
             player.updateInventory();
             player.sendMessage(c(getConfig().getString("messages.armed",
                     "&aName tag prepared as &f%name%&a. Click it onto the item you want to rename.")
-                    .replace("%name%", raw)));
+                    .replace("%name%", legacyName)));
             player.playSound(player.getLocation(), Sound.BLOCK_ENCHANTMENT_TABLE_USE, 0.8f, 1.3f);
         });
     }
@@ -213,7 +214,14 @@ public final class MiraRenamePlugin extends JavaPlugin implements Listener, Comm
     }
 
     private Component c(String value) {
-        return LEGACY.deserialize(value == null ? "" : value);
+        return LEGACY.deserialize(normalizeLegacy(value));
+    }
+
+    private String normalizeLegacy(String value) {
+        if (value == null) return "";
+        // Support the standard ampersand legacy syntax players expect:
+        // &0-&9, &a-&f, &k-&o and &r. Section-sign input is normalized too.
+        return value.replace('§', '&');
     }
 
     private void msg(Player player, String path, String fallback) {
