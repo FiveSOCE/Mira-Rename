@@ -2,8 +2,8 @@ tag:
   material: NAME_TAG
   display-name: "&d&lItem Name Tag"
   lore:
-    - "&7Right-click to enter an item name."
-    - "&7Then click this tag onto the item to rename it."
+    - "&7Right-click in air or on a block to enter an item name."
+    - "&7Supports &f&acolor &7and &f&lformat &7codes using &f&&&7."
     - ""
     - "&8One use."
   max-name-length: 64
