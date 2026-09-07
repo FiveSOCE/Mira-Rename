@@ -1,0 +1,17 @@
+tag:
+  material: NAME_TAG
+  display-name: "&d&lItem Name Tag"
+  lore:
+    - "&7Right-click to enter an item name."
+    - "&7Then click this tag onto the item to rename it."
+    - ""
+    - "&8One use."
+  max-name-length: 64
+
+messages:
+  prompt: "&eType the new item name in chat. Use &fcancel &eto stop."
+  armed: "&aName tag prepared as &f%name%&a. Click it onto the item you want to rename."
+  cancelled: "&cItem rename cancelled."
+  invalid: "&cThat item cannot be renamed."
+  applied: "&aItem renamed to &f%name%&a."
+  no-permission: "&cYou cannot use item name tags."
