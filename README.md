@@ -56,4 +56,3 @@ When MiraItems is installed, MiraRename calls MiraItems' identity-preserving ren
 
 - Version: **0.1.0**
 - JAR: `MiraRename-0.1.0.jar`
-- SHA-256: `986cd993ae855a0685710bb29b2f244f00b4664660414a6b29c40393b87e9bc6`
