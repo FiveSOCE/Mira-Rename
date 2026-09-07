@@ -1,0 +1,20 @@
+name: MiraRename
+version: 0.1.0
+main: com.mira.rename.MiraRenamePlugin
+api-version: '1.21'
+authors: [FiveS]
+description: Two-stage item renaming tags for Mira.
+softdepend: [MiraItems]
+
+commands:
+  mirarename:
+    description: MiraRename administration.
+    usage: /mirarename give <player> [amount]
+    aliases: [mrename]
+    permission: mirarename.admin
+
+permissions:
+  mirarename.admin:
+    default: op
+  mirarename.use:
+    default: true
