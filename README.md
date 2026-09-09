@@ -12,7 +12,7 @@ MiraRename adds consumable two-stage item name tags to the Mira Paper server sui
 
 ## Download
 
-[**Download MiraRename v0.1.1**](https://github.com/FiveSOCE/Mira-Rename/releases/download/v0.1.1/MiraRename-0.1.1.jar)
+[**Download MiraRename v0.1.1**](https://github.com/FiveSOCE/Mira-Rename/releases/download/v0.1.2/MiraRename-0.1.2.jar)
 
 [View All Releases](https://github.com/FiveSOCE/Mira-Rename/releases)
 
