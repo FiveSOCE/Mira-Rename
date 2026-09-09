@@ -1,5 +1,13 @@
 # MiraRename
 
+## Download
+
+**Latest compatibility release: v0.1.2**
+
+[**Download MiraRename-0.1.2.jar**](https://github.com/FiveSOCE/Mira-Rename/releases/download/v0.1.2/MiraRename-0.1.2.jar)
+
+[View all releases](https://github.com/FiveSOCE/Mira-Rename/releases)
+
 ## v0.1.1 fixes
 
 - Right-clicking a rename tag in **air** reliably starts the naming prompt, even when another plugin has already cancelled the underlying interaction event.
@@ -9,12 +17,6 @@
 
 
 MiraRename adds consumable two-stage item name tags to the Mira Paper server suite.
-
-## Download
-
-[**Download MiraRename v0.1.1**](https://github.com/FiveSOCE/Mira-Rename/releases/download/v0.1.2/MiraRename-0.1.2.jar)
-
-[View All Releases](https://github.com/FiveSOCE/Mira-Rename/releases)
 
 ## Requirements
 
