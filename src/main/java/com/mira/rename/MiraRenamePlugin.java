@@ -46,7 +46,7 @@ public final class MiraRenamePlugin extends JavaPlugin implements Listener, Comm
             command.setExecutor(this);
             command.setTabCompleter(this);
         }
-        getLogger().info("MiraRename v" + getPluginMeta().getVersion() + " enabled.");
+        getLogger().info("MiraRename v" + getDescription().getVersion() + " enabled.");
     }
 
     public ItemStack createTag() {
