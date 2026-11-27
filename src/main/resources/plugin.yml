@@ -1,7 +1,7 @@
 name: MiraRename
 version: 0.1.2
 main: com.mira.rename.MiraRenamePlugin
-api-version: '1.21'
+api-version: '1.18'
 authors: [FiveS]
 description: Two-stage item renaming tags for Mira.
 softdepend: [MiraItems]
