@@ -23,4 +23,4 @@ tasks.withType<JavaCompile>().configureEach {
     options.release.set(bytecodeJavaVersion.get())
 }
 
-tasks.jar { archiveFileName.set("MiraRename-${project.version}.jar") }
+tasks.jar { archiveFileName.set("MiraRename_1.18.2.jar") }
