@@ -57,7 +57,6 @@ public final class MiraRenamePlugin extends JavaPlugin implements Listener, Comm
         ItemMeta meta = item.getItemMeta();
         meta.displayName(c(getConfig().getString("tag.display-name", "&d&lItem Name Tag")));
         meta.lore(getConfig().getStringList("tag.lore").stream().map(this::c).toList());
-        meta.setMaxStackSize(1);
         meta.getPersistentDataContainer().set(tagKey, PersistentDataType.BYTE, (byte) 1);
         meta.getPersistentDataContainer().set(tokenKey, PersistentDataType.STRING, UUID.randomUUID().toString());
         item.setItemMeta(meta);
